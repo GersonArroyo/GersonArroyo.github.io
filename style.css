@@ -1,29 +1,37 @@
-/* Reset básico */
+/* ============================= */
+/* RESET */
+/* ============================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Corpo da página */
+/* ============================= */
+/* BODY */
+/* ============================= */
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background-color: #0f172a;
     color: #e2e8f0;
     line-height: 1.6;
-    padding: 40px;
+    padding: 40px 20px;
     max-width: 900px;
     margin: auto;
 }
 
-/* Título principal */
+/* ============================= */
+/* TÍTULOS */
+/* ============================= */
+
 h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
     color: #38bdf8;
 }
 
-/* Subtítulos */
 h2 {
     margin-top: 40px;
     margin-bottom: 15px;
@@ -33,13 +41,19 @@ h2 {
     padding-bottom: 5px;
 }
 
-/* Parágrafos */
+/* ============================= */
+/* TEXTO */
+/* ============================= */
+
 p {
     margin-bottom: 15px;
     color: #cbd5e1;
 }
 
-/* Lista de projetos */
+/* ============================= */
+/* LISTAS */
+/* ============================= */
+
 ul {
     list-style: none;
 }
@@ -48,27 +62,24 @@ li {
     margin-bottom: 10px;
 }
 
-/* Links */
+/* ============================= */
+/* LINKS */
+/* ============================= */
+
 a {
     text-decoration: none;
     color: #38bdf8;
     font-weight: 500;
+    transition: all 0.2s ease;
 }
 
 a:hover {
     color: #0ea5e9;
 }
-.project {
-    background-color: #1e293b;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    transition: transform 0.2s ease;
-}
 
-.project:hover {
-    transform: translateY(-3px);
-}
+/* ============================= */
+/* NAV MENU */
+/* ============================= */
 
 nav {
     display: flex;
@@ -80,9 +91,47 @@ nav {
 
 nav a {
     color: #94a3b8;
-    font-weight: 500;
+    padding-bottom: 5px;
 }
 
 nav a:hover {
     color: #38bdf8;
+    border-bottom: 2px solid #38bdf8;
+}
+
+/* ============================= */
+/* PROJECT CARDS */
+/* ============================= */
+
+.project {
+    background-color: #1e293b;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #334155;
+    transition: all 0.2s ease;
+}
+
+.project:hover {
+    transform: translateY(-3px);
+    border-color: #38bdf8;
+}
+
+/* ============================= */
+/* RESPONSIVIDADE */
+/* ============================= */
+
+@media (max-width: 600px) {
+    body {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
 }
