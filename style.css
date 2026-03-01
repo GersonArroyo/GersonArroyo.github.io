@@ -27,9 +27,9 @@ body {
 /* ============================= */
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin-bottom: 10px;
-    color: #38bdf8;
+    color: #60a5fa;
 }
 
 h2 {
@@ -144,4 +144,7 @@ nav a {
     display: flex;
     align-items: center;
     gap: 6px;
+}
+ul li {
+    margin-bottom: 8px;
 }
