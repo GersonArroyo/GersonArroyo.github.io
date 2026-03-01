@@ -1,19 +1,51 @@
-<h1>Arquitetura de Dados</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architecture | Gerson Arroyo</title>
 
-<h2>Pipeline Batch</h2>
-<p>
-Source → Ingestion → Staging → Transformation → Data Warehouse → Analytics Layer
-</p>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
 
-<h2>Data modeling</h2>
-<p>
-    I use dimensional modeling (Star Schema), with clear definition of granularity and conformed dimensions.
-</p>
+<body>
 
-<h2>Principles</h2>
-<ul>
-    <li>Layered Architecture</li>
-    <li>Reproducibility</li>
-    <li>Code Versioning</li>
-    <li>Decision Documentation</li>
-</ul>
+<nav>
+    <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+    <a href="projects.html"><i class="fa-solid fa-diagram-project"></i> Projects</a>
+    <a href="architecture.html"><i class="fa-solid fa-sitemap"></i> Architecture</a>
+    <a href="index.html#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+</nav>
+
+<header>
+    <h1>Data Architecture</h1>
+</header>
+
+<section>
+    <h2>Batch Pipeline Flow</h2>
+    <p>
+        Source → Ingestion → Staging → Transformation → Data Warehouse → Analytics Layer
+    </p>
+</section>
+
+<section>
+    <h2>Data Modeling</h2>
+    <p>
+        I use dimensional modeling (Star Schema), with clear definition of granularity,
+        surrogate keys, and conformed dimensions.
+    </p>
+</section>
+
+<section>
+    <h2>Principles</h2>
+    <ul>
+        <li>Layered Architecture</li>
+        <li>Reproducibility</li>
+        <li>Code Versioning</li>
+        <li>Decision Documentation</li>
+    </ul>
+</section>
+
+</body>
+</html>
