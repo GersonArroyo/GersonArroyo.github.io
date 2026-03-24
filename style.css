@@ -157,3 +157,8 @@ ul li {
 header {
     margin-bottom: 40px;
 }
+
+ul li i {
+    margin-right: 8px;
+    color: #38bdf8;
+}
