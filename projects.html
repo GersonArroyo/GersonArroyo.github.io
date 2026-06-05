@@ -1,66 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Gerson Arroyo</title>
-
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Gerson Arroyo</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-
 <body>
 
 <nav>
-    <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
-    <a href="projects.html" class="active"><i class="fa-solid fa-diagram-project"></i> Projects</a>
-    <a href="architecture.html"><i class="fa-solid fa-sitemap"></i> Architecture</a>
-    <a href="index.html#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+  <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+  <a href="projects.html" class="active"><i class="fa-solid fa-diagram-project"></i> Projects</a>
+  <a href="architecture.html"><i class="fa-solid fa-sitemap"></i> Architecture</a>
+  <a href="index.html#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
 </nav>
 
 <header>
-    <h1>Projects</h1>
-    <p>
-        This section will focus on complete Data Engineering cases,
-        including batch pipelines, streaming, and analytical modeling.
-    </p>
+  <h1>Projects</h1>
+  <p>End-to-end Data Engineering cases — batch pipelines, analytical modeling, and data exposure.</p>
 </header>
 
 <section>
-    <h2>Under Development</h2>
 
-    <div class="project">
-        <h3>Retail Analytics Pipeline</h3>
-        <p><strong>Focus:</strong> Batch ingestion and dimensional modeling.</p>
-        <p><strong>Stack:</strong> Python | SQL | PostgreSQL</p>
+  <div class="project">
+    <div class="project-header">
+      <h3>PriceTrail</h3>
+      <span class="badge in-progress">In Progress</span>
     </div>
+    <p>
+      Web scraper that collects product prices from Kabum's API, stores the historical
+      data in PostgreSQL, and exposes it via a REST API for external consumption.
+      The project is containerized with Docker and includes a scheduler for automated runs.
+    </p>
+    <p><strong>Key decisions:</strong> FastAPI was chosen to expose the data as a structured,
+      queryable endpoint rather than leaving it locked in a database. Docker ensures
+      the environment is reproducible across machines.</p>
+    <ul class="tag-list">
+      <li>Python</li>
+      <li>FastAPI</li>
+      <li>PostgreSQL</li>
+      <li>Docker</li>
+      <li>Web Scraping</li>
+    </ul>
+    <a href="https://github.com/GersonArroyo/pricetrail" target="_blank">
+      <i class="fa-brands fa-github"></i> View on GitHub
+    </a>
+  </div>
 
-    <div class="project">
-        <h3>Olist Data Warehouse</h3>
-        <p><strong>Focus:</strong> dbt modeling and data transformation.</p>
-        <p><strong>Stack:</strong> Python | SQL | dbt | BigQuery</p>
-        <p><a href="https://github.com/GersonArroyo/olist_dbt_pipeline" target="_blank">View on GitHub</a></p>
+  <div class="project">
+    <div class="project-header">
+      <h3>Olist dbt Pipeline</h3>
+      <span class="badge complete">Complete</span>
     </div>
+    <p>
+      End-to-end data pipeline for the Brazilian e-commerce dataset (Olist / Kaggle).
+      Raw CSV files are ingested into BigQuery via Python, then transformed through
+      a full dbt layer organized as staging → intermediate → marts, grouped by business domain
+      (commercial, logistics, customer experience).
+    </p>
+    <p><strong>Key decisions:</strong> Mart organization by domain reflects how data teams
+      structure models for different stakeholders. CI/CD via GitHub Actions with
+      Workload Identity Federation means the pipeline validates and deploys automatically on every push.</p>
+    <ul class="tag-list">
+      <li>Python</li>
+      <li>dbt</li>
+      <li>BigQuery</li>
+      <li>GitHub Actions</li>
+      <li>CI/CD</li>
+    </ul>
+    <a href="https://github.com/GersonArroyo/olist_dbt_pipeline" target="_blank">
+      <i class="fa-brands fa-github"></i> View on GitHub
+    </a>
+    &nbsp;·&nbsp;
+    <a href="https://gersonarroyo.github.io/olist_dbt_pipeline/" target="_blank">
+      <i class="fa-solid fa-book"></i> dbt Docs
+    </a>
+  </div>
 
-    <div class="project">
-        <h3>Batch Sales Pipeline</h3>
-        <p><strong>Focus:</strong> Batch data ingestion and processing.</p>
-        <p><strong>Stack:</strong> Python | SQL | PostgreSQL</p>
-        <p><a href="https://github.com/GersonArroyo/batch-sales-pipeline" target="_blank">View on GitHub</a></p>
+  <div class="project">
+    <div class="project-header">
+      <h3>Finance Data Warehouse</h3>
+      <span class="badge complete">Complete</span>
     </div>
+    <p>
+      Dimensional model for a fintech transaction dataset focused on fraud detection analysis.
+      The project defines grain, surrogate keys, conformed dimensions, and implements
+      a star schema (fact_transactions, dim_customer, dim_merchant, dim_date) in PostgreSQL.
+    </p>
+    <p><strong>Key decisions:</strong> Scope was deliberately limited to modeling and schema design —
+      the analytics layer sits on top and is out of scope. Business questions, assumptions,
+      and out-of-scope queries are fully documented in the README.</p>
+    <ul class="tag-list">
+      <li>SQL</li>
+      <li>PostgreSQL</li>
+      <li>Dimensional Modeling</li>
+      <li>Docker</li>
+    </ul>
+    <a href="https://github.com/GersonArroyo/finance-dw-modeling" target="_blank">
+      <i class="fa-brands fa-github"></i> View on GitHub
+    </a>
+  </div>
 
-    <div class="project">
-        <h3>Streaming Event Platform</h3>
-        <p>Event-driven architecture with real-time ingestion and processing.</p>
-        <p><strong>Stack:</strong> Python | Kafka | PostgreSQL</p>
-    </div>
-
-    <div class="project">
-        <h3>Data Warehouse - Dimensional Modeling</h3>
-        <p>Complete Star Schema with conformed dimensions and fact tables.</p>
-        <p><strong>Stack:</strong> Python | SQL | PostgreSQL</p>
-        <p><a href="https://github.com/GersonArroyo?tab=repositories" target="_blank">View on GitHub</a></p>
-    </div>
 </section>
 
 </body>
